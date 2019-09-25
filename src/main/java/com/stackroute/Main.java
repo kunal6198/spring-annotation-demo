@@ -5,9 +5,13 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
         System.out.println("Config file loaded.");
-        Movie movie = factory.getBean(Movie.class);
-        System.out.println("Name: "+movie.getActor().getName());
-        System.out.println("Gender: "+movie.getActor().getGender());
-        System.out.println("Age: "+movie.getActor().getAge());
+        Movie movie1 = factory.getBean("movie1",Movie.class);
+        Movie movie2 = factory.getBean("movie2",Movie.class);
+        System.out.println("Name: "+movie1.getActor().getName());
+        System.out.println("Gender: "+movie1.getActor().getGender());
+        System.out.println("Age: "+movie1.getActor().getAge());
+        System.out.println("Name: "+movie2.getActor().getName());
+        System.out.println("Gender: "+movie2.getActor().getGender());
+        System.out.println("Age: "+movie2.getActor().getAge());
     }
 }
