@@ -35,4 +35,12 @@ public class AppConfig {
         Movie movie2 = new Movie(getactor2());
         return movie2;
     }
+
+    @Bean
+    public BeanLifecycledemo Init(){
+        BeanLifecycledemo beanLifecycledemo= new BeanLifecycledemo();
+        return beanLifecycledemo;
+    }
+
+
 }

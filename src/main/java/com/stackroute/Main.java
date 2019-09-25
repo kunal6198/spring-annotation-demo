@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
         System.out.println("Config file loaded.");
+        ((AnnotationConfigApplicationContext)factory).registerShutdownHook();
         Movie movie1 = factory.getBean("movie1",Movie.class);
         Movie movie2 = factory.getBean("movie2",Movie.class);
         System.out.println("Name: "+movie1.getActor().getName());
